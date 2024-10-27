@@ -8,20 +8,22 @@ class GuessingGame {
     setRange(minValue, maxValue) {
         this.minValue = minValue;
         this.maxValue = maxValue;
+        this.middle = Math.round((minValue + maxValue) / 2);
     }
 
     guess() {
-        this.middle = Math.round((this.minValue + this.maxValue) / 2);
         return this.middle;
     }
 
     lower() {
         this.maxValue = this.middle;
+        this.middle = Math.round((this.minValue + this.maxValue) / 2);
 
     }
 
     greater() {
         this.minValue = this.middle;
+        this.middle = Math.round((this.minValue + this.maxValue) / 2);
     }
 }
 
